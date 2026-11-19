@@ -1,19 +1,11 @@
 import secrets
 import string
-import random
 
 
-def aleatorio():
-    # alphabet_lower = 'abcdefghijklmnopqrstuvwxyz'
-    # alphabet_upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    # operation = '+-=/*'
-    # special_car = '!@#$%&()?;:.,~[{}]\\|'
+len_pass = int(input("Tamanho da senha: "))
+caracteres = string.ascii_letters + string.digits + string.punctuation
 
-    caracteres = string.ascii_letters + string.digits + string.punctuation
+password = ""
+password += "".join(secrets.choice(caracteres) for _ in range(len_pass))
 
-    return "".join(secrets.choice(caracteres))
-len_pass=int(input("Tamanho da senha:"))
-password = ''
-for i in range(len_pass):
-    password += aleatorio()
-print(password)
+print(f"Sua senha é: {password}")
